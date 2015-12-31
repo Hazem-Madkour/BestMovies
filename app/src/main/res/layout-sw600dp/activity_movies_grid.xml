@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    tools:context="com.bestmovies.zoom.bestmovies.MoviesGridFragment">
+
+    <android.support.v4.app.FragmentTabHost
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/tabhost"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Light_Bar_Color"
+                android:layout_gravity="bottom"/>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </android.support.v4.app.FragmentTabHost>
+
+    <FrameLayout
+        android:id="@+id/movie_details_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"/>
+
+</LinearLayout>

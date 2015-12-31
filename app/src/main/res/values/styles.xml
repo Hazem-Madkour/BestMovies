@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/Light_Bar_Color</item>
+        <item name="colorPrimaryDark">@color/Bar_Color</item>
+    </style>
+
+    <style name="MovieGridTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="actionBarStyle">@style/BestMovies.ActionBar.V10.Main</item>
+    </style>
+
+    <style name="SettingsTheme" parent="AppTheme">
+    </style>
+
+    <style name="BestMovies.ActionBar.V10.Main" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/Light_Bar_Color</item>
+        <item name="android:height">56dp</item>
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="logo">@mipmap/ic_launcher</item>
+    </style>
+
+    <style name="MovieGirdSelectingItem">
+    </style>
+</resources>

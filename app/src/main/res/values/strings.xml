@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Best Movies</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_movie_details">Movie Details</string>
+    <string name="title_activity_setting">Settings</string>
+    <string name="trailer">Trailers</string>
+    <string name="review">Reviews</string>
+    <string name="overview">Overview</string>
+    <string name="release_date">Release Date</string>
+    <string name="vote_average">Vote Average</string>
+
+    <string name="most_popular">Most Popular</string>
+    <string name="most_rated">Most Rated</string>
+    <string name="most_popular_value">popularity.desc</string>
+    <string name="most_rated_value">vote_average.desc</string>
+    <string name="sorting">Sorting</string>
+    <string name="sorting_key">sorttype</string>
+
+    <string name="show_main_details">Show Names and Release Date</string>
+    <string name="hide_main_details">Show Images Only</string>
+    <string name="show_main_details_value">true</string>
+    <string name="hide_main_details_value">false</string>
+    <string name="viewtype">View Type</string>
+    <string name="viewtypekey">viewtypekey</string>
+
+</resources>

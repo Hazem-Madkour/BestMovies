@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="layout" name="fragment_movies_grid">@layout/fragment_movies_grid_wide</item>
+    <item type="layout" name="fragment_movie_details">@layout/fragment_movie_details_wide</item>
+</resources>

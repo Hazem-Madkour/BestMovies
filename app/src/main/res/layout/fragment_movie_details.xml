@@ -1,0 +1,172 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:id="@+id/lytMovieDetails"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Large Text"
+        android:id="@+id/txtTitle"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:id="@+id/imgPoster"
+            android:layout_gravity="left"
+            android:padding="10dp"
+            android:background="@color/White"
+            android:elevation="6dp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Light_Gray"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="Medium Text"
+                android:id="@+id/txtDuration" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/release_date"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Light_Gray"
+                android:textSize="13sp"
+                android:text="Medium Text"
+                android:id="@+id/txtReleaseDate" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/vote_average"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Light_Gray"
+                android:textSize="13sp"
+                android:text="Medium Text"
+                android:id="@+id/txtVoteAverage" />
+            <ToggleButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/btnFavorite"
+                android:textOff=""
+                android:textOn=""
+                android:layout_marginTop="6dp"
+                android:background="@drawable/favoritecheck"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/White"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="@string/overview"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Light_Gray"
+            android:textSize="17sp"
+            android:text="Medium Text"
+            android:id="@+id/txtOverview"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/White"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/trailer"/>
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btnshow"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btnShowTrailers"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lstTrailers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/White"/>
+    <LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/review"/>
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btnshow"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnShowReviews"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtReviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:textSize="15sp"/>
+</LinearLayout>
+</ScrollView>

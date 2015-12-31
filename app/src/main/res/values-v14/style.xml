@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SettingsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/BestMovies.ActionBar.V14</item>
+    </style>
+    <style name="MovieGridTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/BestMovies.ActionBar.V14.Main</item>
+    </style>
+
+    <style name="BestMovies.ActionBar.V14" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <item name="android:background">@color/Light_Bar_Color</item>
+    <item name="android:height">56dp</item>
+    </style>
+
+    <style name="BestMovies.ActionBar.V14.Main" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/Light_Bar_Color</item>
+        <item name="android:titleTextStyle">@style/ActionBar.Text</item>
+        <item name="android:height">56dp</item>
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="logo">@mipmap/ic_launcher</item>
+
+    </style>
+    <style name="ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textStyle">bold|normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

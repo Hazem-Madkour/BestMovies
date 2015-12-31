@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="White">#FFFFFF</color>
+    <color name="Light_Gray">#F5F5F5</color>
+    <color name="Bar_Color">#D32F2F</color>
+    <color name="Light_Bar_Color">#E53935</color>
+</resources>

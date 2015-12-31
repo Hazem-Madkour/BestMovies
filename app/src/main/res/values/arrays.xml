@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SortedNames">
+        <item>@string/most_popular </item>
+        <item>@string/most_rated </item>
+    </string-array>
+
+    <string-array name="SortedValues">
+        <item>@string/most_popular_value </item>
+        <item>@string/most_rated_value </item>
+    </string-array>
+
+    <string-array name="MainShow">
+        <item>@string/hide_main_details </item>
+        <item>@string/show_main_details </item>
+    </string-array>
+
+    <string-array name="MainShowValues">
+        <item>@string/hide_main_details_value </item>
+        <item>@string/show_main_details_value </item>
+    </string-array>
+</resources>

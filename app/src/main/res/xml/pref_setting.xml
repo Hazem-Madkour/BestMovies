@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListPreference
+        android:title="@string/viewtype"
+        android:key="@string/viewtypekey"
+        android:defaultValue="@string/hide_main_details_value"
+        android:entries="@array/MainShow"
+        android:entryValues="@array/MainShowValues"/>
+
+    <ListPreference
+        android:title="@string/sorting"
+        android:key="@string/sorting_key"
+        android:defaultValue="@string/most_popular_value"
+        android:entries="@array/SortedNames"
+        android:entryValues="@array/SortedValues"/>
+
+</PreferenceScreen>
