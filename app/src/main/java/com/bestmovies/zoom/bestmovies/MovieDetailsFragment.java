@@ -5,19 +5,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompatSideChannelService;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.ShareActionProvider;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -43,7 +35,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MovieDetailsFragment extends Fragment {
 
@@ -62,7 +53,6 @@ public class MovieDetailsFragment extends Fragment {
     ArrayList<String> lstTrailersNames,lstTrailersUrl,lstReviewsContent ;
     TrailersAdapter adpTrailersUrl;
     Utility mUtility;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -297,7 +287,6 @@ public class MovieDetailsFragment extends Fragment {
                     strJsonMovies = null;
                 }
                 strJsonMovies = buffer.toString();
-                Log.v("JSON", strJsonMovies);
                 if(iAttachmentType == MOVIE_TRAILERS)
                     fillTrailersList(strJsonMovies);
                 else if (iAttachmentType == MOVIE_REVIEWS)
@@ -306,7 +295,6 @@ public class MovieDetailsFragment extends Fragment {
                     fillINFOList(strJsonMovies);
                 return null;
             } catch (IOException e) {
-                Log.e("PlaceholderFragment", "Error ", e);
                 strJsonMovies = null;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -318,7 +306,6 @@ public class MovieDetailsFragment extends Fragment {
                     try {
                         reader.close();
                     } catch (final IOException e) {
-                        Log.e("PlaceholderFragment", "Error closing stream", e);
                     }
                 }
             }
@@ -329,6 +316,11 @@ public class MovieDetailsFragment extends Fragment {
         protected void onPostExecute(Void aVoid) {
             try {
                 if (iAttachmentType == MOVIE_TRAILERS) {
+                    if(lstTrailersNames.size() == 0)
+                    {
+                        lstTrailersUrl.add(mUtility.YOUTUBE_SEARCH_URL + mTxtTitle.getText());
+                        lstTrailersNames.add("Couldn't get any trailer, Click to search in Youtube");
+                    }
                     adpTrailersUrl.notifyDataSetChanged();
                     configListViewHeight(lstTrailers);
                 }
@@ -348,7 +340,6 @@ public class MovieDetailsFragment extends Fragment {
                         mTxtDuration.setText(strDuration + " min");
                     }
                 }
-
             }
             catch (Exception e){}
         }

@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,14 +28,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.annotation.ElementType;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class MoviesGridFragment extends Fragment {
 
     GridView grdMovies;
@@ -46,6 +41,10 @@ public class MoviesGridFragment extends Fragment {
     String mSortingType;
     String mViewType;
     boolean mFailed;
+    int mPosition = GridView.INVALID_POSITION;
+    String mPositionId = "Null";
+    private static final String SELECTED_KEY = "SIP";
+    private static final String SELECTED_ID_KEY = "SIPID";
 
     public MoviesGridFragment() {
     }
@@ -55,6 +54,10 @@ public class MoviesGridFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_movies_grid,container,false);
         init(rootView);
         configClicks();
+        if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_KEY)) {
+            mPosition = savedInstanceState.getInt(SELECTED_KEY);
+            mPositionId = savedInstanceState.getString(SELECTED_ID_KEY);
+        }
         return rootView;
     }
 
@@ -83,6 +86,8 @@ public class MoviesGridFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 try {
                     Utility.sMovieObject = lstMovies.get(i);
+                    mPosition = i;
+                    mPositionId = lstMovies.get(i).Id;
                     if (Utility.sTwoPane) {
                         MovieDetailsFragment MDF = (MovieDetailsFragment) getActivity().getSupportFragmentManager().findFragmentByTag(MoviesGrid.MOVIE_DETAILS);
                         if (null != MDF) {
@@ -93,7 +98,6 @@ public class MoviesGridFragment extends Fragment {
                         startActivity(intentDetails);
                     }
                 } catch (Exception e) {
-                    Log.e("GridItemClick", e.getMessage());
                 }
             }
         });
@@ -117,11 +121,20 @@ public class MoviesGridFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        if (mPosition != GridView.INVALID_POSITION) {
+            outState.putInt(SELECTED_KEY, mPosition);
+            outState.putString(SELECTED_ID_KEY, mPositionId);
+        }
+        super.onSaveInstanceState(outState);
+    }
+
     public class FetchMovies extends AsyncTask<Void,Void,Void>
     {
         @Override
         protected void onPreExecute() {
-            Toast.makeText(getContext(),"Loading Movies...",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Loading Movies...",Toast.LENGTH_SHORT).show();
         }
 
         private ArrayList<MovieObject> getMoviesDataFromJson(String strJsonMovies)
@@ -206,6 +219,12 @@ public class MoviesGridFragment extends Fragment {
                 Toast.makeText(getContext(), "Please Check Your Internet Connection", Toast.LENGTH_LONG).show();
                 mFailed =false;
             }
+            try {
+                if (mPosition != GridView.INVALID_POSITION && lstMovies.get(mPosition).Id.equals(mPositionId)) {
+                    grdMovies.smoothScrollToPosition(mPosition);
+                }
+            }
+            catch (Exception e){}
         }
 
         @Override
@@ -302,7 +321,6 @@ public class MoviesGridFragment extends Fragment {
             }
             catch (Exception e)
             {
-                Log.e("GetViewInGridAdapter",e.getMessage());
                 return  null;
             }
         }

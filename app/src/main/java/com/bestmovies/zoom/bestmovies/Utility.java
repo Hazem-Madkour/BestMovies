@@ -24,7 +24,7 @@ public class Utility {
     static final String IMAGE_URL = "https://image.tmdb.org/t/p/w185";
     static final String YOUTUBE_URL = "https://www.youtube.com/watch?v=";
     static final String YOUTUBE_SEARCH_URL = "https://www.youtube.com/results?search_query=";
-    static final String KEY = "PUT YOUR KEY";
+    //static final String KEY = "PUT YOUR KEY";
 
     public static boolean sTwoPane = false;
     public static MovieObject sMovieObject;

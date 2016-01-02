@@ -23,7 +23,6 @@ public class MoviesProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         Cursor retCursor;
-
         retCursor = mMoviesDBHelper.getReadableDatabase().query(
                 MoviesContract.MoviesColumns.TABLE_NAME,
                 projection,

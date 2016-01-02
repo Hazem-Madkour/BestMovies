@@ -135,8 +135,9 @@ public class MoviesFavoriteGridFragment extends Fragment implements LoaderManage
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         adpGrid.swapCursor(data);
         Utility.sCreateNewGridFragment = true;
-        if (mPosition != GridView.INVALID_POSITION)
-        grdImages.smoothScrollToPosition(mPosition);
+        if (mPosition != GridView.INVALID_POSITION) {
+            grdImages.smoothScrollToPosition(mPosition);
+        }
     }
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
@@ -167,7 +168,6 @@ public class MoviesFavoriteGridFragment extends Fragment implements LoaderManage
             holder.imgGridPic = (ImageView) view.findViewById(R.id.imgGridPic);
             holder.txtTitle = (TextView) view.findViewById(R.id.txtGridTitle);
             holder.txtReleaseDate = (TextView) view.findViewById(R.id.txtGridReleaseDate);
-
             view.setTag(holder);
             return view;
         }
