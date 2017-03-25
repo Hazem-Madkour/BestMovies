@@ -1,8 +1,15 @@
 # BestMovies
-Popular Movies App
+Udacity Android Nanodegree Popular Movies App (Project 2)
 
-in Best Movies App you need to put a key in Utility Class so the app can run
+# Description
+This application gets the most popular and rated movies online, And shows the movie descriptions, rates, images, trailers, and reviews.
+
+# MovieDB Key
+Don't forget to add you MovieDB key in the Utility Class so the app can run successfully
+
+static final String KEY = "PUT YOUR KEY";
 
 You can get the key from MovieDB Site: www.themoviedb.org
 
+# Copyright
 Copyright Hazem Madkour
