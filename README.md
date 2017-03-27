@@ -1,5 +1,5 @@
 # Best Movies
-Udacity Android Nanodegree Popular Movies App (Project 2)
+App for [Udacity Android Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) Popular Movies App (Project 2)
 
 # Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=UaHqER_54jk
